@@ -1,0 +1,72 @@
+/* 1. 画面全体の無駄な余白をリセットする */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. ファーストビュー全体のデザイン */
+.main-visual {
+    /* 用意した背景画像を表示（main-bg.jpg を読み込みます） */
+    background-image: url('main-bg.jpg');
+    /* 画像を常に画面中央に配置 */
+    background-position: center;
+    /* 画像の縦横比を保ったまま、画面いっぱいに引き伸ばす */
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* 高さを「画面の縦幅ぴったり（100vh）」にする */
+    height: 100vh;
+    width: 100%;
+
+    /* 中の文字を上下左右の「真ん中」に集める魔法のコード */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* 文字を読みやすくするために、画像の上に少し黒いフィルターをかける */
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: overlay;
+}
+
+/* 3. 中央に集まった文字・ボタンのデザイン */
+.main-visual-content {
+    text-align: center; /* 文字を中央揃えに */
+    color: #ffffff;     /* 文字色を白に */
+    padding: 0 20px;    /* スマホで見たときに左右に少し余白を作る */
+}
+
+/* 見出し（H1）のデザイン */
+.main-visual-content h1 {
+    font-size: 2.5rem;   /* 文字の大きさ */
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif; /* フォント設定 */
+    line-height: 1.5;    /* 行間 */
+    margin-bottom: 20px; /* 下の文章とのスキマ */
+}
+
+/* 説明文（P）のデザイン */
+.main-visual-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px; /* 下のボタンとのスキマ */
+}
+
+/* 4. お問い合わせボタン（CTA）のデザイン */
+.cta-button {
+    display: inline-block;
+    background-color: #ff5722; /* 目立つオレンジ色 */
+    color: #ffffff;
+    text-decoration: none;     /* リンクの下線を消す */
+    padding: 15px 40px;        /* ボタンの内側の余白（上下、左右） */
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;       /* 角を丸くしてカプセル型に */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* 高級感を出す影 */
+    transition: all 0.3s ease; /* マウスを乗せた時の動きを滑らかに */
+}
+
+/* ボタンにマウスを乗せた時（ホバー）の動き */
+.cta-button:hover {
+    background-color: #e64a19; /* 少し濃いオレンジに */
+    transform: translateY(-3px); /* 3ピクセル上にふわっと浮き上がる */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* 影を強くする */
+}
