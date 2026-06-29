@@ -573,6 +573,13 @@
     border-radius: 4px;          /* 小さなラベル風にする */
 }
 
+.voice-stars {
+    color: #ff9800;
+    font-size: 16px;
+    margin-bottom: 10px; /* 👈 ここがプロの防波堤！ */
+    letter-spacing: 2px;
+}
+
 /* 💬 口コミのタイトル */
 .voice-card-title {
     font-size: 18px;
