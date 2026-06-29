@@ -168,7 +168,7 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     /* カードとカードの間のスキマ（縦横とも30pxあける） */
     gap: 30px;
-}
+    }
 
 /* 3つのカード、それぞれのデザイン（GIMPのレイヤー感覚） */
 .feature-item {
@@ -708,6 +708,139 @@
     background-color: #26d968; /* ☀️ パッと明るい緑色に変身させて「押せるよ！」とアピール */
     transform: translateY(3px); /* 🛩️ 下に3pxだけ沈み込ませる（ボタンを押した感覚の再現） */
     box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3); /* 🟢 ボタンの周りに緑色のオーラ（影）をふわっと纏わせる */
+}
+
+
+/* ==========================================
+   💻 お問い合わせフォーム
+========================================== */
+/* 🏢 フォームセクション全体の背景 */
+.contact-section {
+    background-color: #f8fafc; /* 🥛 画面の終わりをスッキリ見せる、優しい薄グレー */
+    padding: 80px 20px;        /* ↕️ 上下にしっかり余白をとって、前のセクションと区切る */
+}
+
+/* 🧺 フォームの内容を包む中央寄せの箱 */
+.contact-container {
+    max-width: 600px;          /* 📏 入力欄が横に広がりすぎない、一番入力しやすい「黄金の600px」 */
+    margin: 0 auto;            /* ↔️ おなじみ！自分自身を画面の真ん中に寄せる呪文 */
+    text-align: center;        /* ✍️ 中にあるタイトルや説明文を真ん中に寄せる */
+}
+
+/* 📢 メインタイトル */
+.contact-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 15px;       /* ↕️ 下のサブタイトルとの隙間 */
+}
+
+/* 💬 サブタイトル（説明文） */
+.contact-subtitle {
+    font-size: 15px;
+    color: #64748b;            /* 🎨 少しだけマイルドなグレーにして読みやすく */
+    margin-bottom: 40px;       /* ↕️ これから作る入力フォームとの間のしっかりとした隙間 */
+}
+
+/* 📦 1つの入力項目を包むグループ（縦並びの隙間作り） */
+.form-group {
+    text-align: left;          /* 👈 【超重要】親がcenterなので、中身（ラベルなど）は左揃えにリセットする */
+    margin-bottom: 25px;       /* ↕️ 項目と項目の間の心地よい隙間 */
+}
+
+/* 🏷️ 項目のタイトル（お名前、メールアドレスなど） */
+.form-label {
+    display: block;            /* 🧱 縦並びにするためにブロック要素に変身！ */
+    font-size: 15px;
+    font-weight: bold;
+    color: #334155;
+    margin-bottom: 8px;        /* ↕️ ラベルと入力欄の間の隙間 */
+}
+
+/* 🔴 必須マークのバッジ */
+.badge-required {
+    background-color: #ef4444; /* 🔥 パッと目を引く赤色 */
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;          /* 👈 ラベルの文字との隙間 */
+    vertical-align: middle;    /* 🧘‍♀️ 文字の高さの真ん中に綺麗に揃える */
+}
+
+/* 📥 1行の入力欄（お名前・メールアドレス） */
+.form-input {
+    width: 100%;               /* ↔️ 親の600pxいっぱいに広げる */
+    padding: 14px 16px;        /* ↕️ スマホでも文字が入力しやすい、ゆったりした厚み */
+    font-size: 16px;           /* ✍️ スマホでズームアップされない絶妙な文字サイズ */
+    border: 1px solid #cbd5e1; /* 🎨 主張しすぎない上品なグレーの枠線 */
+    border-radius: 6px;        /* 📐 角を少しだけ丸めて優しく */
+    background-color: #ffffff;
+    
+    /* 🍏 MacやiPhone独自の、入力欄の勝手な影（デフォルトデザイン）をリセットして綺麗にする */
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* 💬 複数行の入力欄（お問い合わせ内容） */
+.form-textarea {
+    width: 100%;               /* ↔️ 横幅いっぱい */
+    height: 150px;             /* ↕️ 最初からたっぷり書けるように高さを固定 */
+    padding: 14px 16px;        
+    font-size: 16px;           
+    border: 1px solid #cbd5e1; 
+    border-radius: 6px;        
+    background-color: #ffffff;
+    
+    /* 📐 ユーザーが右下をドラッグして、縦方向にだけサイズ変更できるようにする（横崩れ防止） */
+    resize: vertical; 
+    
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* 🧺 送信ボタンを包むエリア（真ん中に寄せるため） */
+.form-submit-wrap {
+    text-align: center;        /* 🎯 ボタン自身をこのエリアの真ん中にドカンと配置する */
+    margin-top: 35px;          /* ↕️ 上の入力欄とのしっかりとした間隔 */
+}
+
+/* 🚀 送信ボタン本体（buttonタグ） */
+.form-submit-btn {
+    display: inline-block;
+    max-width: 400px;          /* 📏 フォームの600pxより少しスリムな、押しやすいサイズ */
+    width: 100%;               /* 📱 スマホでは横幅いっぱい（100%）に広がる */
+    
+    /* 🎨 誠実さと安心感を与える「信頼のブルー（#3b82f6）」 */
+    background-color: #3b82f6; 
+    color: #ffffff;            /* ✍️ 文字は白抜き */
+    
+    font-size: 20px;           /* 📢 しっかり目立つ大きめの文字 */
+    font-weight: bold;
+    padding: 18px 30px;        /* ↕️ 指でタップしやすい極厚の押しやすさ */
+    border-radius: 8px;        /* 📐 入力欄の丸み（6px）に合わせて、少しカチッとした四角丸に */
+    
+    /* 🛠️ buttonタグ特有の「生まれつきのダサい枠線」を綺麗さっぱり消し去る */
+    border: none; 
+    
+    /* 🏔️ 爆音ボタンと同じ！影（box-shadow）を使ったガタつかない立体感（#2563eb = 濃い青） */
+    box-shadow: 0 5px 0 #2563eb; 
+    
+    /* 👆 マウスを乗せたときに「押せるよ」とわかるように矢印を指マーク（ポインター）に変える */
+    cursor: pointer; 
+    
+    /* ✨ なめらかな動きの魔法 */
+    transition: all 0.2s ease;
+}
+
+/* 🕹️ 送信ボタンにマウスを乗せたとき（ホバー） */
+.form-submit-btn:hover {
+    background-color: #60a5fa; /* ☀️ パッと明るい爽やかな青色に変身 */
+    transform: translateY(2px); /* 🛩️ 下に2pxだけ心地よく沈み込ませる */
+    
+    /* 🏔️ 2px沈んだ分、下の立体影を「5px」から「3px」に減らす！これでガタつかない！ */
+    box-shadow: 0 3px 0 #2563eb, 0 8px 20px rgba(59, 130, 246, 0.25); 
 }
 
 /* ==========================================
