@@ -36,12 +36,24 @@
     padding: 0 20px;    /* スマホで見たときに左右に少し余白を作る */
 }
 
-/* 見出し（H1）のデザイン */
 .main-visual-content h1 {
     font-size: 2.5rem;   /* 文字の大きさ */
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif; /* フォント設定 */
     line-height: 1.5;    /* 行間 */
     margin-bottom: 20px; /* 下の文章とのスキマ */
+
+    /* 👇ここを追加！：最初は透明にして、下に30pxずらして隠しておく */
+    opacity: 0;
+    transform: translateY(30px);
+    
+    /* 👇ここを追加！：動かしたいプロパティ（透明度と位置）をピンポイント指名して、0.8秒かける */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* 👇ここを追加！：JSが「fade-in」というシールを貼ったら、100%表示にして元の位置(0)に戻す */
+.main-visual-content h1.fade-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* 説明文（P）のデザイン */
@@ -101,10 +113,10 @@
 .features-grid {
     display: grid;
     /* 「同じ幅の列を、3つ均等に並べる」という魔法の命令 */
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     /* カードとカードの間のスキマ（縦横とも30pxあける） */
     gap: 30px;
-    }
+}
 
 /* 3つのカード、それぞれのデザイン（GIMPのレイヤー感覚） */
 .feature-item {
