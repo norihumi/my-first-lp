@@ -154,3 +154,62 @@
     color: #666666;            /* 本文は少し薄めのグレーにして読みやすく */
     line-height: 1.6;          /* しっかり行間をあけて可読性を上げる */
 }
+
+/* ==========================================
+   レイアウト①：メディアオブジェクト（Zレイアウト）
+========================================== */
+
+/* セクション全体の上下のスキマをしっかりあける */
+.services {
+    padding: 80px 0;
+    background-color: #ffffff; /* 背景は白 */
+}
+
+/* 画像と文章を包む「横長の1行分の箱」 */
+.service-item {
+    display: flex;              /* 💡中の画像と文章を横並びにする */
+    align-items: center;        /* 上下の中央で綺麗に整列させる */
+    justify-content: space-between; /* 画像と文章を左右の両端にパキッと離す */
+    margin-bottom: 60px;        /* 1行目と2行目の間のスキマ */
+}
+
+/* 左右交互（Zレイアウト）にするための超・重要プロパティ！ */
+.service-item.reverse {
+    flex-direction: row-reverse; /* 💡横並びの順番を「右から左」に大逆転させる！ */
+}
+
+/* 画像エリアの横幅を全体の「45%」にする */
+.service-img {
+    width: 45%;
+}
+
+/* まだ本物の画像がないので、GIMPのキャンバスのようなグレーの箱を作っておく */
+/* 📸 本物の写真を載せるときの、本来の姿 */
+.dummy-img {
+    height: 250px;              /* 高さを決める */
+    border-radius: 8px;         /* 角を丸くする */
+    
+    /* 🔴ここから下が、本番で新しく入れ替わるコード */
+    background-image: url('main-bg.jpg'); /* 本物の写真を敷く */
+    background-size: cover;               /* 縦横比を保って型崩れ防止 */
+    background-position: center;          /* 写真の真ん中を映す */
+}
+
+/* 文章エリアの横幅を全体の「48%」にする（画像との間に3%の隙間ができる） */
+.service-text {
+    width: 48%;
+}
+
+/* 見出しの文字を少し大きく、太く */
+.service-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* 説明文の読みやすさ調整 */
+.service-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
