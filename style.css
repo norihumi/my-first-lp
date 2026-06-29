@@ -280,3 +280,74 @@
     font-size: 0.9rem;
     color: #888;
 }
+
+/* ==========================================
+   レイアウト③：3ステップ（手順）
+========================================== */
+
+/* セクション全体の上下のスキマ（背景は真っ白に戻す！） */
+.steps {
+    padding: 80px 0;
+    background-color: #ffffff; /* 💡グレーの次だから、ここは白にして交互のリズムをキープ！ */
+}
+
+/* 3つのステップを包む大きな箱（パソコンでは横並び、スマホでは縦並びにするためのFlexbox） */
+.step-list {
+    display: flex;
+    flex-direction: column;    /* 💡基本は縦並び（スマホ用） */
+    gap: 50px;                  /* ステップ同士のスキマ */
+}
+
+/* ステップカード1枚ずつの設定 */
+.step-item {
+    position: relative;         /* 💡超重要：「数字のバッジ」を上に浮かせるための【基準のピン】を刺す！ */
+    background-color: #f9f9f9;  /* カードの背景はうっすらグレー */
+    border-radius: 12px;        /* お馴染みの角丸 */
+    padding: 40px 30px 30px;    /* 💡数字が上に載るので、上の余白（40px）を少し広めにする高級感のpadding */
+}
+
+/* 🎯 頭の上にドカンと載せる数字のバッジ */
+.step-number {
+    position: absolute;         /* 💡超重要：「親の箱を無視して、好きな場所にワープする」という空中浮遊の魔法！ */
+    top: -25px;                 /* 💡上に 25px 分だけ、わざとはみ出させて浮かせる！ */
+    left: 30px;                 /* 左端から 30px の位置に配置 */
+    
+    width: 50px;
+    height: 50px;
+    background-color: #333333;  /* 数字の背景は引き締まる黒（またはメインカラー） */
+    color: #ffffff;             /* 数字の色は白 */
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 50%;         /* 💡綺麗な「正円（丸バッジ）」にする裏技！ */
+    
+    /* 円の中の数字をど真ん中に持ってくるいつものFlexbox */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ステップ内の見出し（カウンセリングなど） */
+.step-content h3 {
+    font-size: 1.3rem;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+/* ステップ内の本文 */
+.step-content p {
+    font-size: 1.0rem;
+    color: #666666;
+    line-height: 1.7;
+}
+
+/* ==========================================
+   💻 パソコン用の画面幅になったときの切り替え設定
+========================================== */
+@media (min-width: 768px) {
+    .step-list {
+        flex-direction: row;    /* 💡パソコン画面では、縦並びから「横一列」にガバッと切り替える！ */
+    }
+    .step-item {
+        flex: 1;                /* 💡3枚のカードが全部「同じ横幅」で均等に並ぶようにするお守り */
+    }
+}
