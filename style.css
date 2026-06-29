@@ -70,3 +70,75 @@
     transform: translateY(-3px); /* 3ピクセル上にふわっと浮き上がる */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* 影を強くする */
 }
+
+/* ==========================================
+   4. 特徴（Features）セクションのデザイン
+   ========================================== */
+
+/* セクション全体の背景と余白 */
+.features {
+    background-color: #f9f9f9; /* 少し温かみのある薄いグレー背景 */
+    padding: 80px 0;           /* 上下にたっぷり80pxの余白をあけて高級感を出す */
+}
+
+/* ★例のコンテナ！コンテンツの横幅を中央に制限する */
+.container {
+    max-width: 1100px;         /* どんな大画面でも中身は1100pxの中に収める */
+    margin: 0 auto;            /* 左右の余白を自動計算して「真ん中寄せ」にする */
+    padding: 0 20px;           /* スマホ画面のときに、左右ぴったりにくっつくのを防ぐ */
+}
+
+/* セクションのタイトル（選ばれる3つの理由） */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #333333;            /* 真っ黒ではなく、少し優しい高級感のある黒 */
+    margin-bottom: 50px;       /* タイトルの下のスキマ */
+    position: relative;
+}
+
+/* ★新しい並べ方の武器：「CSS Grid（グリッド）」 */
+.features-grid {
+    display: grid;
+    /* 「同じ幅の列を、3つ均等に並べる」という魔法の命令 */
+    grid-template-columns: repeat(3, 1fr);
+    /* カードとカードの間のスキマ（縦横とも30pxあける） */
+    gap: 30px;
+    }
+
+/* 3つのカード、それぞれのデザイン（GIMPのレイヤー感覚） */
+.feature-item {
+    background-color: #ffffff; /* カード自体は純白にして目立たせる */
+    padding: 40px 30px;        /* カードの内側の余白（上下40px、左右30px） */
+    border-radius: 10px;       /* 角を少し丸くして柔らかい印象に */
+    text-align: center;
+    /* カードの下側に、うっすらと上品な影をつける（立体感） */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease; /* マウスを乗せた時のアニメーション用 */
+}
+
+/* カードにマウスを乗せたときの動き（ホバー効果） */
+.feature-item:hover {
+    transform: translateY(-10px); /* 上に10pxふわっと浮き上がる */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); /* 影を濃くして浮遊感を出す */
+}
+
+/* カードの中の絵文字（アイコン） */
+.feature-icon {
+    font-size: 3rem;           /* 絵文字を大きく */
+    margin-bottom: 20px;       /* 絵文字の下のスキマ */
+}
+
+/* カードの中の見出し（H3） */
+.feature-item h3 {
+    font-size: 1.4rem;
+    color: #333333;
+    margin-bottom: 15px;       /* 見出しの下のスキマ */
+}
+
+/* カードの中の説明文（P） */
+.feature-item p {
+    font-size: 1rem;
+    color: #666666;            /* 本文は少し薄めのグレーにして読みやすく */
+    line-height: 1.6;          /* しっかり行間をあけて可読性を上げる */
+}
