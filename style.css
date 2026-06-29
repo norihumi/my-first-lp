@@ -393,6 +393,56 @@
 }
 
 /* ==========================================
+   CTA（お問い合わせ誘導）のスタイル
+   ========================================== */
+.cta-section {
+    width: 100%;
+    padding: 80px 20px;          /* 上下にたっぷり余白を空けて、主役感を出す */
+    background-color: #f0f7ff;   /* 🧊 信頼感・安心感を与える、ごく薄い爽やかなブルー */
+}
+
+.cta-container {
+    max-width: 600px;            /* 文字が横に広がりすぎて読みづらくなるのを防ぐ */
+    margin: 0 auto;              /* 💡【お馴染み】箱ごと画面の中央に配置する */
+    text-align: center;          /* 中の文字やボタンをすべて中央揃えにする */
+}
+
+.cta-title {
+    font-size: 28px;
+    color: #333333;
+    margin-bottom: 20px;         /* 下の文章との間に余白を空ける */
+}
+
+.cta-text {
+    font-size: 16px;
+    color: #666666;
+    line-height: 1.8;            /* 行間をゆったりあけて読みやすくする */
+    margin-bottom: 40px;         /* 下のボタンとの間にたっぷり余白を空ける */
+}
+
+/* 🎯 出た！リンク（<a>タグ）をボタンに変身させるお守り */
+.cta-btn {
+    display: inline-block;       /* 💡【復習】これがないと上下の余白が崩れる！ */
+    background-color: #ff4500;   /* 💥 行動を促す、いちばん目立つ情熱的なオレンジレッド */
+    color: #ffffff;              /* ブラウザのお節介青ルールを上書き */
+    text-decoration: none;       /* 下線を消し去る */
+    
+    padding: 20px 50px;          /* ヒーロービューよりさらに一回り大きく、押しやすく！ */
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px;         /* 綺麗なカプセル型 */
+    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.3); /* ボタンと同系色のうっすらとした影 */
+    transition: all 0.3s;
+}
+
+/* 💡 マウスを乗せた（hover）ときのピカッとエフェクト */
+.cta-btn:hover {
+    background-color: #ff6347;   /* ちょっと明るい色にして反応を出す */
+    transform: translateY(-3px);  /* ピョコッと上に浮かせる */
+    box-shadow: 0 6px 20px rgba(255, 69, 0, 0.5); /* 影を濃くして浮遊感をアップ */
+}
+
+/* ==========================================
    💻 パソコン用の画面幅になったときの切り替え設定
 ========================================== */
 @media (min-width: 768px) {
