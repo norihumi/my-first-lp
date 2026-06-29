@@ -213,3 +213,70 @@
     line-height: 1.6;
     color: #666;
 }
+
+/* ==========================================
+   レイアウト②：実績スライダー
+========================================== */
+
+/* セクション全体の上下のスキマ（背景はグレーにして白セクションと交互に！） */
+.works {
+    padding: 80px 0;
+    background-color: #f9f9f9; /* 💡ここをグレーにして区切りを分かりやすく */
+    overflow: hidden;          /* 💡画面の右側からはみ出たカードで横スクロールバーが出るのを防ぐお守り */
+}
+
+/* スライダー全体を包む大きなレール */
+.works-slider {
+    display: flex;              /* 💡カードを横一列に並べる */
+    gap: 30px;                  /* カードとカードの間のスキマ */
+    padding: 20px 0;
+    
+    /* 👇ここがスライダーの命！ */
+    overflow-x: auto;           /* 💡はみ出た分は、指やマウスで横スクロールできるようにする */
+    scroll-snap-type: x mandatory; /* 💡スマホでスクロールしたとき、カードのキリがいいところでピタッと止まる磁石の魔法 */
+    
+    /* Windowsなどで出る不格好なスクロールバーを非表示にする設定 */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.works-slider::-webkit-scrollbar {
+    display: none; /* Google ChromeやSafari用 */
+}
+
+/* 実績カード1枚ずつの設定 */
+.work-card {
+    flex: 0 0 300px;            /* 💡超重要：「画面が狭くなっても絶対に縮むな！幅は300pxを死守せよ！」という命令 */
+    background-color: #ffffff;  /* カードの背景は白 */
+    border-radius: 12px;        /* 角丸 */
+    overflow: hidden;           /* 中の画像が角丸からはみ出さないようにトリミング */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* うっすら高級感のある影 */
+    scroll-snap-align: start;   /* 💡さっきの磁石の止まる位置を「カードの左端」に設定 */
+}
+
+/* グレーの仮画像エリア（GIMPのキャンバス風） */
+.work-img {
+    height: 200px;                 /* ① 高さを決める */
+    background-image: url('main-bg.jpg'); /* ② 本物の画像（ファイル名）を指定する */
+    background-size: cover;        /* ③ 縦横比を保って、箱いっぱいに広げて型崩れ防止！ */
+    background-position: center;   /* ④ 画像の真ん中が映るように配置！ */
+    
+    border-radius: 8px;            /* （角丸のデザインも残しておきましょう！） */
+}
+
+/* カードの下半分の文字エリア */
+.work-info {
+    padding: 20px;
+}
+
+/* 実績のタイトル */
+.work-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* 実績のカテゴリー（デザイン / コーディングなど） */
+.work-info p {
+    font-size: 0.9rem;
+    color: #888;
+}
