@@ -517,6 +517,78 @@
 }
 
 /* ==========================================
+   ⑥ お客様の声セクション
+   ========================================== */
+.voices {
+    width: 100%;                 /* 🌍 ルール①：幅全体 */
+    padding: 80px 20px;          /* 📏 ルール②：上下に高級感の余白 */
+    background-color: #ffffff;   /* 🎨 お悩みエリアがグレーだったので、ここは交互に「白」にしてメリハリをつける */
+}
+
+.voices-container {
+    max-width: 1000px;           /* 🧱 3箱並ぶので、お悩みエリア（700px）より少し広めの1000pxに設定 */
+    margin: 0 auto;              /* 📦 画面の真ん中へ引っ越し */
+}
+
+/* 🧺 3つのカードを包む親玉のカゴ（ここに魔法をかける！） */
+.voice-flex {
+    display: flex;               /* 🪄 魔法の呪文：中に入っている子どもたちを「横並び」にする */
+    justify-content: center; /* ⚖️ 左右均等配分の呪文：両端にピタッと寄せて、間に均等な隙間を作る */
+    gap: 20px;                   /* 📐 箱と箱の間のスキマを20pxに指定（最近のプロの主流技） */
+
+    flex-wrap : wrap;
+}
+
+/* 👶 1つ1つの口コミカード（子ども） */
+.voice-card {
+    width : 100%;
+    max-width : 30%;
+    min-width : 280px;
+
+    background-color: #ffffff;
+    padding: 30px 25px;
+    border: 1px solid #e0e0e0;   /* 🖼️ 白い背景の上に白いカードなので、うっすら細い枠線で境界線を作る */
+    border-radius: 8px;          /* 🎨 優しい角の丸み */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); /* 🌫️ ごくうっすらとした上品な影 */
+}
+
+/* 🏷️ 年齢やタグを包むエリア */
+.voice-meta {
+    display: flex;
+    gap: 10px;                   /* 年齢とタグの間を10pxあける */
+    margin-bottom: 15px;
+}
+
+.voice-age {
+    font-size: 13px;
+    color: #777777;
+    font-weight: bold;
+}
+
+.voice-tag {
+    font-size: 11px;
+    background-color: #e6f2ff;   /* 🔵 爽やかなごく薄いブルーの背景 */
+    color: #0066cc;              /* 🔵 文字は濃いブルー */
+    padding: 2px 8px;
+    border-radius: 4px;          /* 小さなラベル風にする */
+}
+
+/* 💬 口コミのタイトル */
+.voice-card-title {
+    font-size: 18px;
+    color: #333333;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+/* ✍️ 口コミの本文 */
+.voice-text {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* ==========================================
    💻 パソコン用の画面幅になったときの切り替え設定
 ========================================== */
 @media (min-width: 768px) {
