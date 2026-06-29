@@ -596,6 +596,80 @@
 }
 
 /* ==========================================
+   ⑦ 特典・CTAセクション
+   ========================================== */
+
+/* 🌍 外箱：今回は少し目を引く「薄いブルー（#edf2f7）」でセクションを切り替えます */
+.bonus {
+    width: 100%;
+    padding: 80px 20px;
+    background-color: #edf2f7; 
+}
+
+/* 🧱 内箱：コンテンツを中央にギュッと集める（黄金比の1000px） */
+.bonus-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center; /* 中の文字やボタンをすべて中央寄せにする */
+}
+
+/* 🧺 特典の親玉カゴ：お客様の声で学んだ技をそのまま使い回し！ */
+.bonus-flex {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+/* 🎁 1つ1つの特典カード（子ども） */
+.bonus-card {
+    width: 100%;
+    max-width: 30%;
+    min-width: 280px; /* 🛡️ スマホでこれ以上縮まないための防波堤 */
+    
+    background-color: #ffffff;
+    padding: 30px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: left; /* カードの中の文章は読みやすく左詰めに */
+    position: relative; /* 「特典01」というラベルを飾るための準備 */
+}
+
+/* 🏷️ 特典の番号（特典 01 などのラベル） */
+.bonus-number {
+    position: absolute; 
+    top: -15px;         /* 👆 親の上の境界線から、さらに15px上にはみ出す */
+    left: 15px;         /* 👈 親の左の境界線から、15px右に入ったところ */
+
+    display: inline-block;
+    background-color: #ff9800;   /* 🎨 お客様の声の「星」と同じ、目立つオレンジゴールド */
+    color: #ffffff;              /* ✍️ 文字は白抜きにして読みやすく */
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 4px;          /* 📐 少しだけ角を丸くして今風のデザインに */
+    margin-bottom: 15px;         /* ↔️ 下のタイトルとの隙間 */
+}
+
+/* 📋 特典のタイトル（マニュアルの名称など） */
+.bonus-card-title {
+    font-size: 18px;
+    color: #2d3748;              /* 🎨 高級感のある濃いグレー */
+    line-height: 1.4;
+    font-weight: bold;
+    margin-bottom: 12px;         /* ↔️ 下の解説テキストとの隙間 */
+}
+
+/* 📝 特典の解説テキスト */
+.bonus-text {
+    font-size: 14px;
+    color: #4a5568;              /* 🎨 本文として一番読みやすいマイルドなグレー */
+    line-height: 1.6;            /* ↕️ 行間を少し広げて、窮屈感をなくす */
+}
+
+/* ==========================================
    💻 パソコン用の画面幅になったときの切り替え設定
 ========================================== */
 @media (min-width: 768px) {
